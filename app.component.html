@@ -1,0 +1,14 @@
+<div class="control-section">
+
+    <ejs-grid #grid [dataSource]='data' allowPaging='true' allowFiltering='true' [pageSettings]='pageSettings' [filterSettings]='filterSettings'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right'></e-column>
+            <e-column [filter]= 'filter' field='Client.CustomerID' headerText='Client Details' width='150'>
+            <ng-template #template let-data>
+            <p>Name: {{ data.Client.CustomerID}}</p>
+            <p>Country: {{ data.Client.ShipCountry }}</p>
+          </ng-template>
+            </e-column>
+        </e-columns>
+    </ejs-grid>
+
